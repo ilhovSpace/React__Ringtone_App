@@ -8,12 +8,10 @@ function ModalLogin(props) {
     function submit(e){
         props.handleCloseLogin()
         e.preventDefault()
-        console.dir(e.target.elements)
         let login = e.target.elements[0].value
         e.target.elements[0].value = ''
         let pass = e.target.elements[1].value
         e.target.elements[1].value = ''
-        console.log(login, pass)
         props.authorizeRequest(login, pass)
       }
     
