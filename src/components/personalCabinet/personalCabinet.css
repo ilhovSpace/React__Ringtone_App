@@ -1,0 +1,21 @@
+.item_area{
+    border: 1.5px solid white;
+    border-radius: 10px;
+    margin: 2px 0px;
+}
+.item_area > ul {
+    list-style-type: none;
+}
+.player{
+    padding: 0;
+}
+.blockCenter{
+    display: block;
+    margin: 0 auto
+}
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    .item_area {
+      font-size: 14px;
+    }
+  }
