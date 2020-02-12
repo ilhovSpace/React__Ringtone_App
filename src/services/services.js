@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export function getAllCategoryFromServer(){
-    const url = "https://cors-anywhere.herokuapp.com/https://t-rbt.telesens.ua/t-rbt/subscriber"
+    const url = "https://t-rbt.telesens.ua/t-rbt/subscriber"
     const body = encodeURI(
               'p0=contentCategorySearch&p1=' +
               '{"searchParameters":{"pagination":{"offset":0,"pageSize":0}, "sortOrder":[{"attribute":"OrderNo","ascending":true}]}}'
@@ -10,7 +10,7 @@ export function getAllCategoryFromServer(){
   }
 
 export function getAllSoundsFromServer(){
-    const url = "https://cors-anywhere.herokuapp.com/https://t-rbt.telesens.ua/t-rbt/subscriber"
+    const url = "https://t-rbt.telesens.ua/t-rbt/subscriber"
     const body = encodeURI(
         'p0=contentSearch&p1= {"subsIdent":"","password":"","serviceNo":-1,"searchParameters": '+
         '{ "pagination": { "offset": 0, "pageSize": 24 }, "sortOrder":  '+
