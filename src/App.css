@@ -153,3 +153,9 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 400px) {
+  .card {
+    margin: 0 2px;
+  }
+}
