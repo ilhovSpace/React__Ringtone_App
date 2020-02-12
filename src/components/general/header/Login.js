@@ -19,7 +19,7 @@ function Login(props) {
   }
 
   if(props.authorize.status){
-  return <div><div style={{display: 'inline-block', position: 'relative', top: '4px', left: '-5px'}}>You entered as {props.authorize.userInfo.subscriber.subsIdent}</div> <button className="btn btn-outline-light" onClick={() => props.authorizeLogout()}>Logout</button></div>
+  return <div><div style={{display: 'inline-block', position: 'relative', top: '4px', left: '-5px'}}>You entered as {props.authorize.userInfo.subscriber.subsIdent}</div> <a href='/'className="btn btn-outline-light" onClick={() => props.authorizeLogout()}>Logout</a></div>
   }
   else {
     return (
@@ -33,12 +33,12 @@ function Login(props) {
             <form onSubmit={submit}>
               <div className="form-group">
                 <label htmlFor="exampleInputEmail1">Phone number</label>
-                <input type="tel" name='login'className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder= "Phone number" minLength="9" maxLength="12" pattern="[0-9]{9,12}" required></input>
-                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                <input type="tel" name='login'className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder= "Phone number" minLength="10" maxLength="12" pattern="[0-9]{9,12}" required></input>
+                <small id="emailHelp" className="form-text text-muted">0994006505 , 0994006506 , 0994006507</small>
               </div>
             <div className="form-group">
               <label htmlFor="exampleInputPassword1">Password</label>
-              <input type='password' className="password form-control" name='password' id="exampleInputPassword1" placeholder="Password" minLength='4' maxLength="4" required></input>
+              <input type='password' className="password form-control" name='password' id="exampleInputPassword1" placeholder="Password" minLength='4' maxLength="12" required></input>
             </div>
               <p>To get the password send SMS to number 444</p>
               <button className="btn btn-secondary my-2 px-md-6 mr-2" onClick={handleClose}>Cansel</button>

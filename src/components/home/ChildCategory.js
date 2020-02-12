@@ -28,8 +28,8 @@ function ChildComponent(props){
                 })
     } 
     return <div>
-            Categories: <div>{childCategory}</div>
-        </div>
+            {!props.searchResponse ? <div>Categories: <div>{childCategory}</div></div> : <div>Content from : Search</div>}
+         </div>
 }
 
 

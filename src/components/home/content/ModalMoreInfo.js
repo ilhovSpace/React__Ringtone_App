@@ -24,16 +24,16 @@ function MoreInfo(props) {
                   ></MyPlayer>
                 </Col>
                 <Col xs={7} md={7} style={{padding: '0'}}>
-                  <ul>
-                    <li>Title: {props.title}</li>
-                    <li>Content type: {}</li>
-                    <li>Artist: Britney Spears</li>
-                    <li>Copyright: Sony BMG</li>
-                    <li>Purchase price: $3</li>
-                    <li>Prolongation price: $2.5</li>
-                    <li>Charge period (days): 10</li>
-                    <li>Link: https://t-rbt.telesens.ua/t-rbt/?id=499105566</li>
-                    <li>ID: 499105566</li>
+                  <ul style={{listStyleType:'none'}}>
+                    {props.info.complexType ? <li>Content type: {props.info.complexType === 'S' ? 'Single' : 'Channel'}</li> : null}
+                    {props.info.title ? <li>Title: {props.info.title}</li> : null}
+                    {props.info.artist ? <li>Artist: {props.info.artist}</li> : null}
+                    {props.info.copyright ? <li>Copyright: {props.info.copyright}</li> : null}
+                    {props.info.priceModelNo ? <li>Purchase price: {props.info.priceModelNo}$</li> : null}
+                    {props.info.amountPeriodic ? <li>Prolongation price: {props.info.amountPeriodic}$</li> : null}
+                    {props.info.chargePeriod ? <li>Charge period (days): {props.info.chargePeriod}</li> : null}
+                    {props.info.contentNo ? <li>Link: <a href={'https://t-rbt.telesens.ua/t-rbt/?id='+props.info.contentNo}>{'.../t-rbt/?id='+props.info.contentNo}</a></li> : null}
+                    {props.info.contentNo ? <li>ID: {props.info.contentNo}</li> : null}
                   </ul>
                 </Col>
             </Row>

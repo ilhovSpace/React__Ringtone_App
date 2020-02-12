@@ -1,8 +1,16 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
+import { connect } from 'react-redux'
+import { setPlayTrackId, stopPlayer } from '../../../../redux/actions/actions'
 
 function MyPlayer(props){
     const [playStatus, setPlayStatus] = useState(false);
     const [AUDIO] = useState(new Audio([props.audioSrc]));
+    useEffect(()=>{
+        return ()=>{
+            AUDIO.pause()
+        }
+    },[])
+
 
 
     if(props.playerPlayWithId !== props.musicTrackId && props.playerPlayWithId !== 0 && playStatus === true){
@@ -52,4 +60,16 @@ function MyPlayer(props){
     )
 }
 
-export default MyPlayer
+function mapStateToProps(state){
+    return {
+        playerPlayWithId: state.playerReducer.playerPlayWithId
+    }
+}
+
+const mapDispatchToProps = {
+    setPlayTrackId,
+    stopPlayer
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyPlayer)

@@ -8,6 +8,7 @@ function Search(props){
         e.preventDefault()
         let search = e.target.elements[0].value
         props.searchRequest(search)
+        e.target.elements[0].value = ''
       }
 
     return(

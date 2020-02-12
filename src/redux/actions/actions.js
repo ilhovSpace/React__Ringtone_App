@@ -128,6 +128,7 @@ export function buyRingtoneRequest(subs, pass, contentNo) {
                 position: 'top',
                 icon: response ? 'success' : 'error',
                 title: response ? 'The purchase was successful' : 'The purchase was not successful',
+                html: '',
                 showConfirmButton: false,
                 timer: 1500
               }

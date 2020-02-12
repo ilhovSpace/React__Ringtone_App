@@ -15,7 +15,6 @@ import { faShoppingCart, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
   const handleCloseLogin = () => setShowLogin(false);
   const handleShowLogin = () => setShowLogin(true);
 
-
   function showDialogWindow(){
     if(!props.authorize.status){
         Swal.fire({
@@ -34,9 +33,13 @@ import { faShoppingCart, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
           })
     } else {
         Swal.fire({
-              title: props.title,
+              // title: props.title,
               position: 'top',
-              text:  `Price: ${props.priceModelNo}$ Do you want to buy this ringtone?`,
+              text:  'Do you want to buy this ringtone?',
+              html: `<h3>Do you want to buy this ringtone?</h3>
+              <h4>${props.title}</h4>
+              ${props.artist ? '<h4>'+props.artist+'</h4>' : ''}
+              <h4>Price: ${props.priceModelNo}$</h4>`,
               icon: 'question',
               showCancelButton: true,
               confirmButtonColor: '#5cb85c',
@@ -58,9 +61,9 @@ import { faShoppingCart, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
     return (
         <div className='card' key={props.id}>
           <MyPlayer imageSrc={props.imageSrc} 
-          setPlayTrackId={props.setPlayTrackId}
-          stopPlayer={ props.stopPlayer}
-          playerPlayWithId={props.playerPlayWithId}
+          // setPlayTrackId={props.setPlayTrackId}
+          // stopPlayer={ props.stopPlayer}
+          // playerPlayWithId={props.playerPlayWithId}
           audioSrc={props.soundSrc}
           setPlyaingIdTreck={props.setPlyaingIdTreck}
           plyaingId={props.plyaingId}
@@ -68,7 +71,7 @@ import { faShoppingCart, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
           ></MyPlayer>
                 <h3 style={{height: '33px'}}>{props.title}</h3>
                 <h3>{props.artist}</h3>
-            <p>Single</p>
+            {props.infoItem.complexType ? <p>{props.infoItem.complexType === 'S' ? 'Single' : 'Channel'}</p> : null}
             <div className='flexBlock' style={{justifyContent: "space-around"}}>
                 <div style={{fontSize: '28px'}}>${props.priceModelNo}</div>
                 <div style={{fontSize: '28px'}}>
@@ -86,9 +89,10 @@ import { faShoppingCart, faInfoCircle } from '@fortawesome/free-solid-svg-icons'
                 handleCloseLogin={handleCloseLogin} 
             ></ModalLogin>
             <ModalMoreInfo 
-                setPlyaingIdTreck={() => props.setPlyaingIdTreck()}
-                plyaingId={props.plyaingId}
-                musicTrackId={props.musicTrackId}
+                // setPlyaingIdTreck={props.setPlyaingIdTreck}
+                // plyaingId={props.plyaingId}
+                // musicTrackId={props.musicTrackId}
+                info={props.infoItem}
                 show={show} 
                 handleClose={handleClose} 
                 title={props.title} 

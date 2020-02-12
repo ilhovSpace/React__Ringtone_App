@@ -26,18 +26,18 @@ function ModalLogin(props) {
             <form onSubmit={submit}>
               <div className="form-group">
                 <label htmlFor="exampleInputEmail1">Phone number</label>
-                <input type="tel" name='login'className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder= "Phone number" minLength="9" maxLength="12" pattern="[0-9]{9,12}" required></input>
-                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                <input type="tel" name='login'className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder= "Phone number" minLength="10" maxLength="12" pattern="[0-9]{9,12}" required></input>
+                <small id="emailHelp" className="form-text text-muted">0994006505 , 0994006506 , 0994006507</small>
               </div>
               <div className="form-group">
                 <label htmlFor="exampleInputPassword1">Password</label>
-                <input type='password' className="password form-control" name='password' id="exampleInputPassword1" placeholder="Password" minLength='4' maxLength="4" required></input>
+                <input type='password' className="password form-control" name='password' id="exampleInputPassword1" placeholder="Password" minLength='4' maxLength="12" required></input>
               </div>
               <p>To get the password send SMS to number 444</p>
               <button className="btn btn-secondary my-2 px-md-6 mr-2" onClick={props.handleCloseLogin}>
               Cansel
             </button>
-              <button type="submit" className="btn btn-success" >login</button>
+              <button type="submit" className="btn btn-success">login</button>
               </form>
             </Modal.Body>
         </Modal>
