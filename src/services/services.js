@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export function getAllCategoryFromServer(){
-    const url = "https://t-rbt.telesens.ua/t-rbt/subscriber"
+    const url = "'https://cors-anywhere.herokuapp.com/https://t-rbt.telesens.ua/t-rbt/subscriber"
     const body = encodeURI(
               'p0=contentCategorySearch&p1=' +
               '{"searchParameters":{"pagination":{"offset":0,"pageSize":0}, "sortOrder":[{"attribute":"OrderNo","ascending":true}]}}'
@@ -10,7 +10,7 @@ export function getAllCategoryFromServer(){
   }
 
 export function getAllSoundsFromServer(){
-    const url = "https://t-rbt.telesens.ua/t-rbt/subscriber"
+    const url = "'https://cors-anywhere.herokuapp.com/https://t-rbt.telesens.ua/t-rbt/subscriber"
     const body = encodeURI(
         'p0=contentSearch&p1= {"subsIdent":"","password":"","serviceNo":-1,"searchParameters": '+
         '{ "pagination": { "offset": 0, "pageSize": 24 }, "sortOrder":  '+
@@ -20,7 +20,7 @@ export function getAllSoundsFromServer(){
   }
 
 export function authorize(login, pass){
-  const url = "https://t-rbt.telesens.ua/t-rbt/subscriber"
+  const url = "'https://cors-anywhere.herokuapp.com/https://t-rbt.telesens.ua/t-rbt/subscriber"
   const body = encodeURI(
       'p0=subscriberRetrieve&p1={"scope":{"returnGiftContent":true, "returnPersonalContent":true,"returnPlayConditions":true,"returnPreservedContent":true,"returnPublicContent":true,"returnSubscriptions":true}, "password":"'+pass+'","subsIdent":"'+login+'"}'+
       '&p2=mobile'
@@ -29,7 +29,7 @@ export function authorize(login, pass){
 }
 
 export function buyRingtone(subs, pass, contentNo){
-  const url = "https://t-rbt.telesens.ua/t-rbt/subscriber"
+  const url = "'https://cors-anywhere.herokuapp.com/https://t-rbt.telesens.ua/t-rbt/subscriber"
   const body = encodeURI(
       'p0=contentPurchase&p1={"password":"'+pass+'","subsIdent":"'+subs+'", "contentNoOrVirtContentNo":'+contentNo+',"serviceNoOrVirtServiceNo":1}'+
       '&p2=mobile'
@@ -38,7 +38,7 @@ export function buyRingtone(subs, pass, contentNo){
 }
 
 export function searchTracks(text){
-  const url = "https://t-rbt.telesens.ua/t-rbt/subscriber"
+  const url = "'https://cors-anywhere.herokuapp.com/https://t-rbt.telesens.ua/t-rbt/subscriber"
   const headers = {
     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
     Accept: 'application/json',
